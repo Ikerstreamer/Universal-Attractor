@@ -205,7 +205,7 @@ function buyUpgrade(tier) {
 }
 
 function getPrestigePower() {
-	multi=player.points.div(Math.pow(10,40-Math.log(2)/Math.log(0.05))).pow(0.05)
+	multi=(player.points.div(Math.pow(10,40-Math.log(2)/Math.log(0.05))).pow(0.05)).add(1)
     if (player.prestigeUpgrades.includes(5) && multi.log10()>1) multi=multi.times(multi.log10())
     if (player.prestigeUpgrades.includes(8)) multi=multi.times(2)
     if (player.prestigeUpgrades.includes(12)) multi=multi.times(Math.pow(1+1/(1+player.transferPlaytime/3600000),0.1))
